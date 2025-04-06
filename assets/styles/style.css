@@ -1,0 +1,232 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body{
+    font-family: 'quicksand',sans-serif;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.navbarcontainer{
+    width: 100%;
+    max-width: 1200px;/*untuk membuat lebar header menjadi 1200px */
+    padding-block: 1rem;/*mengatur keseluruhan padding*/
+    margin-inline: auto;
+    
+    display: flex;
+    /* flexdirection seharusnya tidak diperlukan lagi, karena default value dari diisplay: flex sudah mengarah ke row(horizontal) */
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    z-index: 9999;
+    background-color: white;
+
+    /*jika ingin membuat header tetap*/
+    /* padding: 0 3rem;padding atas bawah=0 kanan kiri 3
+    position: sticky;
+    top: 0; */
+}
+
+.logo img{
+    width: 100px;
+}
+
+.navbarlist ul{
+    padding-left: 0;
+    display: flex;
+    justify-content: center;
+    gap: 2rem 1rem;
+}
+
+.navbarlist li{
+    list-style-type: none;
+}
+
+.navbarlist li a{
+    padding: 0.5rem 1.5rem;
+    border-radius: 999px;
+
+    text-decoration: none;
+    font-size: 1.05rem;
+    font-weight: 500;
+    color: black;
+    transition: all 0.2s ease-in-out;
+}
+
+.navbarlist li a:hover{
+    background-color: #425c77;
+    color: white;
+}
+
+.tombolresume{
+    padding: 1rem 1rem;
+    font-size: large;
+    font-weight: 1000;
+    background-color: #425c77;
+    color: white;
+    transition: all 0.2s ease-in-out;
+    border-radius: 10px;
+    text-decoration: none;
+    border: 2px solid black;
+}
+
+.tombolresume:hover{
+    background-color: white;
+    color: #425c77;
+    border: 2px solid #425c77;
+}
+
+main{
+    padding: 20px;
+    display: flex;
+    gap: 1rem 2rem;
+}
+
+.content{
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1rem 2rem;
+}
+
+.card{
+    box-shadow: 0 4px 8px 0 rgb(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.smallcard{
+    /* boxshadow adalah shorthand untuk bayangan kiri-kanan, bayangan atas-bawah, tingkat keburaman, tingkat seberan, dan warna */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    /* border saja adalah shorthand dari border width, border type, dan border color */
+    border: 1px solid blue;
+    background: white;
+    padding: 20px;
+    /* border radius jika hanya satu nilai adalah shorthand dari border ataskanan, bawahkkanan, bawahkiri, dan ataskiri */
+    border-radius: 20px;
+    text-align: left;
+    width: 250px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.smallcard:hover{
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transform: translateY(-5px);
+}
+
+.title{
+    padding-left: 10px;
+}
+
+aside{
+    flex: 1;
+}
+
+aside img{
+    border: 2px solid #425c77;
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-color: gainsboro;
+}
+
+aside table{
+    text-align: justify;
+}
+
+th,td{
+    padding: 5px;
+}
+
+.gambarskills img{
+    width: 60px;
+}
+
+.gambarskills{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.gambarskills img:hover{
+    filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.3));
+    transform: translateY(-5px);
+}
+
+footer{
+    background-color: #425c77;
+    color: white;
+    font-weight: bold;
+}
+
+footer p{
+    padding-left: 20px;
+}
+
+footer h3{
+    padding-left: 20px;
+}
+
+.social-media ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.social-media li{
+    list-style-type: none;
+}
+
+.social-media li a{
+    text-decoration: none;
+    color: white;
+    transition: all 0.2s ease-in-out;
+}
+
+.social-media li a:hover{
+    color: black;
+}
+
+.satubaris{
+    color: red;
+    font-weight: bolder;
+}
+
+@media screen and (max-width: 768px) {
+    header.navbarcontainer {
+      flex-direction: column;
+    }
+   
+    header.navbarcontainer .navbarlist ul {
+      flex-wrap: wrap;
+      column-gap: 0.5rem;
+    }
+   
+    main {
+      padding: 1rem 3rem;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+    
+    .gambarskills{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .smallcard{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: auto;
+    }
+}
